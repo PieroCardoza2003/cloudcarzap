@@ -1,7 +1,7 @@
 import app from './app.js';
-import { PORT } from './config.js';
-import { startTimers } from './services/timers-service.js'
-import { initWebSocket } from './connections/socketserver.js';
+import { PORT } from './config/envariables.config.js';
+import { startTimers } from './services/timers.service.js';
+//import { initWebSocket } from './connections/socketserver.js';
 
 async function main() {
     try {
@@ -10,7 +10,7 @@ async function main() {
       });
 
       startTimers();
-      initWebSocket(server);
+      //initWebSocket(server);
 
     } catch(error) {
       console.log('Ocurrio un error: ', error);

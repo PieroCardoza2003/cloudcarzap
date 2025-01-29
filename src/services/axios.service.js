@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BASEURL } from '../config.js'
+import { BASEURL } from '../config/envariables.config.js';
 
 export const autoPingServer = async () => {
     try {
@@ -8,11 +8,11 @@ export const autoPingServer = async () => {
         const response = await axios.get(url);
         
         if (response.data)
-            console.log("[[ 200: WEBSOCKET ]]");
+            console.log("(200) SERVER ON");
         else
-            console.log("[[ 404: WEBSOCKET ]]");
+            console.log("(404) SERVER ERROR");
 
     } catch (error) {
-        console.log("[[ 500: WEBSOCKET ]]");
+        console.log("(500) SERVER ERROR");
     }
 };

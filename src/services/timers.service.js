@@ -1,5 +1,5 @@
 import schedule from 'node-schedule';
-import { autoPingServer } from './axios-service.js'
+import { autoPingServer } from './axios.service.js';
 
 export const startTimers = () => {
     timerAutoPing()
