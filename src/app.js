@@ -19,18 +19,19 @@ app.use(morgan(config_morgan));
 app.use(express.json(config_limitjson));
 app.use(express.urlencoded(config_urlencoded));
 
-app.use('/logs' , router_logs);
-
+/*
 app.get('/', (req, res) => {
     res.send(
         req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out'
     );
 });
+*/
+
+app.use('/logs' , router_logs);
 
 app.get('/profile', requiresAuth(), (req, res) => {
     res.send(JSON.stringify(req.oidc.user, null, 2));
 });
-
 
 /*
 app.post('/command', (req, res) => {
@@ -46,6 +47,7 @@ app.post('/command', (req, res) => {
     res.status(200).json({ message: 'pong...' });
 });
 */
+
 app.get('/ping', (req, res) => {
     res.status(200).json({ status: 'pong' });
 });
