@@ -1,7 +1,5 @@
 
-
-
-export const create_log = async  (req, res) =>{
+export const create_log = async  (req, res) => {
     try {
         const { detalles } = req.body
 
